@@ -1,6 +1,6 @@
-const siteConfig = require(`../siteConfig`);
+import {siteConfig} from "../../siteConfig";
 
-var TtcHelper = {
+export  const  TtcHelper = {
 
     imgUrl(img, path = null) {
         if (path) {
@@ -92,4 +92,3 @@ var TtcHelper = {
     }
 };
 
-module.exports = TtcHelper;

@@ -2,7 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const distDir = path.join(__dirname, '../dist');
-const srcDir = path.join(__dirname, '../src');
+const srcDir = path.join(__dirname, '../src/serve');
 
 module.exports = [
     {
@@ -29,31 +29,7 @@ module.exports = [
                         }
                     ]
                 },
-                {
-                    test: /\.pcss$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: 'style-loader',
-                        use: [
-                            {
-                                loader: 'css-loader',
-                                options: {
-                                    modules: true,
-                                    importLoaders: 1,
-                                    localIdentName: '[local]',
-                                    sourceMap: true,
-                                }
-                            },
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    config: {
-                                        path: `${__dirname}/../postcss/postcss.config.js`,
-                                    }
-                                }
-                            }
-                        ]
-                    })
-                },
+
             ],
         },
         plugins: [
@@ -87,31 +63,7 @@ module.exports = [
                         }
                     ]
                 },
-                {
-                    test: /\.pcss$/,
-                    use: [
-                        {
-                            loader: 'isomorphic-style-loader',
-                        },
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                modules: true,
-                                importLoaders: 1,
-                                localIdentName: '[local]',
-                                sourceMap: false
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                config: {
-                                    path: `${__dirname}/../postcss/postcss.config.js`,
-                                }
-                            }
-                        }
-                    ]
-                }
+
             ],
         },
     }

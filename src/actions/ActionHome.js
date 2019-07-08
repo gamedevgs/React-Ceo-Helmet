@@ -1,6 +1,5 @@
-import * as type from '../constants/ActionType';
-import fetch from 'isomorphic-fetch';
 import zyzHelper from "../common/components/DataProvider";
+
 
 export function list_origin_1() {
     return (dispatch, getState) => {

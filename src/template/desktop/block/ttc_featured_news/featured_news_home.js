@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import * as action from "./../../../../../actions/ActionHome";
+import * as action from "./../../../../actions/ActionHome";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import SuggerBarHottag from "../ttc_ultils/Sugger_bar_hottag";
+import {TtcHelper} from "../../../../common/TtcHelper";
 
 
-const TtcHelper = require(`./../../../../../common/TtcHelper`);
 const settings = {
     dots: true,
     infinite: true,
@@ -16,7 +15,7 @@ const settings = {
     slidesToScroll: 3
 };
 
-class featured_news_home extends Component {
+class FeaturedNewsHome extends Component {
 
     componentDidMount() {
         this.props.onLoadFeaturedNew();
@@ -104,19 +103,19 @@ class featured_news_home extends Component {
                     <ul className="subMenu-bottom">
                         <li><a href="javascript:void(0)" rel="nofollow" title="Breaking news"
                                className="icon-direction"> </a></li>
-                        {this.RenderHottag()}
+                        {/*{this.RenderHottag()}*/}
                     </ul>
                 </div>
                 <div className="outer outer-top">
                     {/* Begin block featured of home */}
                     <section className="content">
                         <div className="block-top">
-                            {this.RenderArtTop1()}
-                            {this.RenderArtTop2()}
+                            {/*{this.RenderArtTop1()}*/}
+                            {/*{this.RenderArtTop2()}*/}
                         </div>
                         <div className="outer-slider">
                             <Slider className="slider single-top" {...settings} >
-                                {this.RenderSlider()}
+                                {/*{this.RenderSlider()}*/}
                             </Slider>
                         </div>
                     </section>
@@ -146,4 +145,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(featured_news_home);
+export default connect(mapStateToProps, mapDispatchToProps)(FeaturedNewsHome);

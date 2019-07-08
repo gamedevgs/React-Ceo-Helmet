@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import {Helmet} from "react-helmet";
-import _HTML from './../app/_html';
-import Layout from './../app/Layout';
+import _HTML from './../main/_html';
+import Layout from './../main/Layout';
 
 export default function serverRenderer({clientStats, serverStats}) {
     return (req, res, next) => {

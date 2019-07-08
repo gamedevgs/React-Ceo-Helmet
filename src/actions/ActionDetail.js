@@ -1,6 +1,6 @@
 import * as type from '../constants/ActionType';
 import fetch from 'isomorphic-fetch';
-import zyzHelper from "../common/components/DataProvider";
+import zyzHelper from "../../src/common/components/DataProvider";
 
 export function content_detail(id) {
     return (dispatch, getState) => {

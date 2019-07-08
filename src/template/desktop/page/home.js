@@ -1,37 +1,46 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchData } from "./../../../../store";
+import React, {Component} from 'react';
+// import FeaturedNewsHome from "../block/ttc_featured_news/featured_news_home";
 
-class home extends React.Component {
-    componentDidMount() {
-        if ( this.props.circuits.length <= 0 ) {
-            this.props.fetchData( );
-        }
-    }
-    render( ) {
-       const { circuits } = this.props;
-
+class Home extends Component {
+    render() {
         return (
-            <div>
-                <h2>F1 2018 Season Calendar</h2>
-                <ul>
-                    { circuits.map( ( { circuitId, circuitName, Location } ) => (
-                        <li key={ circuitId } >{ circuitName } - { Location.locality }, { Location.country }</li>
-                    ) ) }
-                </ul>
+            <div className="main">
+                <div className="container">
+                    <h1>ssss</h1>
+                    {/*<FeaturedNewsHome/>*/}
+                    {/*<span className="line-border"/>*/}
+                    {/*<div className="outer outer-mid  scrollToOne">*/}
+                    {/*    <section className="content">*/}
+                    {/*        /!* Begin block biem hoa of home *!/*/}
+                    {/*        <Biem_Hoa_News_Home />*/}
+                    {/*        /!* End block biem hoa of home *!/*/}
+                    {/*    </section>*/}
+                    {/*    <aside className="sidebar">*/}
+                    {/*        /!* Begin block most view of home *!/*/}
+                    {/*        <Most_View_Home />*/}
+                    {/*        /!* End block most view home *!/*/}
+                    {/*    </aside>*/}
+                    {/*</div>*/}
+                    {/*<span className="line-border"/>*/}
+                    {/*/!* Begin block media of home *!/*/}
+                    {/*<Media_Home />*/}
+                    {/*/!* End block media home *!/*/}
+                    {/*<span className="line-border"/>*/}
+                    {/*/!* Begin block doi cuoi of home *!/*/}
+                    {/*<Doi_Cuoi_News_Home />*/}
+                    {/*/!* End block giai tri home *!/*/}
+                    {/*<span className="line-border"/>*/}
+                    {/*/!* Begin block giai tri of home *!/*/}
+                    {/*<Giai_Tri_News_Home />*/}
+                    {/*/!* End block doi cuoi home *!/*/}
+                    {/*<span className="line-border"/>*/}
+                    {/*/!* Begin block 2 columns of home *!/*/}
+                    {/*<Column_News_Home />*/}
+                    {/* End block 2 columns of home */}
+                </div>
             </div>
         );
     }
 }
-home.serverFetch = fetchData; // static declaration of data requirements
 
-
-const mapStateToProps = ( state ) => ( {
-    circuits: state.data,
-} );
-
-const mapDispatchToProps = {
-    fetchData,
-};
-
-export default connect( mapStateToProps, mapDispatchToProps )( home );
+export default Home;

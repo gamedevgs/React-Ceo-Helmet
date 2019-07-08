@@ -1,6 +1,5 @@
 import  ApiLayer from './ApiLayer';
-
-const siteConfig = require(`./../../siteConfig`);
+import {siteConfig} from "../../../siteConfig";
 const SimpleStorage = require(`./SimpleStorageLayer`);
 
 const method = siteConfig.dataProvider.method;
